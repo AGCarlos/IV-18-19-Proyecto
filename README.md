@@ -14,3 +14,6 @@ Microservicio utilizado para la gestión de obras, donde nos permite:
 ### Uso
 - En un futuro próximo, se usará en una empresa para llevar el control de obras.
 - En este caso, se le añadirán más funcionalidades.
+
+### Lenguaje usado
+- Python
