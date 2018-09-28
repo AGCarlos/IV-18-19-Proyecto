@@ -5,11 +5,9 @@ Proyecto para la asignatura de Infraestructura Virtual (2018-2019)
 ### Descripción
 
 Microservicio utilizado para la gestión de obras, donde nos permite:
-- Gestión de empleados
-- Gestión de obras
-- Facturas asociadas a cada obra
-- Gestión de clientes
-- Informes de cada obra
+- Altas, bajas y modificaciones de informes de obras.
+- Cada informe contiene a trabajadores, gastos, material, fechas y pagos.
+- Se almacenarán los informes y se pueden consultar.
 
 ### Uso
 - En un futuro próximo, se usará en una empresa para llevar el control de obras.
