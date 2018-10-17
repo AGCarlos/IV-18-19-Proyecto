@@ -15,5 +15,5 @@ Microservicio utilizado para la gestión de obras, donde nos permite:
 
 ### Herramientas
 - Base de datos: PostgreSQL
-- Framework: Django
-- Sistema Log: módulo de Django
+- Framework: Flask
+- Sistema Log: módulo de Flask
