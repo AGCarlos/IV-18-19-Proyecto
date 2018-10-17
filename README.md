@@ -1,6 +1,7 @@
 # Gestión de ObrasMTA
 
-https://travis-ci.com/maikeltoledo/IV-18-19-Proyecto.svg?branch=master
+[![Build Status](https://travis-ci.com/maikeltoledo/IV-18-19-Proyecto.svg?branch=master)](https://travis-ci.com/maikeltoledo/IV-18-19-Proyecto)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Proyecto para la asignatura de Infraestructura Virtual (2018-2019)
 
