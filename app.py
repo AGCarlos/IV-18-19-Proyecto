@@ -8,7 +8,7 @@ def homepage():
 
     return """
     <h1>Hola!! Prueba para IV 2018</h1>
-    <p>Hora actual: {time}.</p>
+    <p>Hoy es: {time}.</p>
     """.format(time=the_time)
 
 @app.route("/status")
