@@ -20,3 +20,13 @@ Microservicio utilizado para la gestión de obras, donde nos permite:
 - Base de datos: PostgreSQL
 - Framework: Flask
 - Sistema Log: módulo de Flask
+
+### Test
+Utilización de Pytest para realizar test en el proyecto. Los test se pasan a través de [Travis-CI](https://travis-ci.com/).
+El archivo de los test se llama: test.py
+
+### Despliegue
+He utilizado Heroku, actualmente hay una app de prueba en el siguiente enlace: [Despliegue Heroku]()
+
+### Documentación
+La documentación la encontramos: [documentación](./doc/README.md)
