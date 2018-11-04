@@ -4,12 +4,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    the_time = datetime.now().strftime("%A, %d %b %Y %l:%M")
+    return "Hola!! Prueba para IV 2018"
 
-    return """
-    <h1>Hola!! Prueba para IV 2018</h1>
-    <p>Hoy es: {time}.</p>
-    """.format(time=the_time)
 
 @app.route("/status")
 def status():
