@@ -28,7 +28,7 @@ El archivo de los test se llama: test.py
 ### Despliegue
 ![Heroku](https://heroku-badge.herokuapp.com/?app=obrasmta)
 
-He utilizado Heroku, actualmente hay una app de prueba en el siguiente enlace: [Despliegue Heroku](https://obrasmta.herokuapp.com/)
+He utilizado Heroku, actualmente hay una app de prueba en el siguiente enlace: [Despliegue Heroku](https://obrasmta.herokuapp.com/status)
 
 ### Documentación
 La documentación la encontramos: [documentación](./doc/README.md)
