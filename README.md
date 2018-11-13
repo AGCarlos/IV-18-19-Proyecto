@@ -26,9 +26,9 @@ Utilización de Pytest para realizar test en el proyecto. Los test se pasan a tr
 El archivo de los test se llama: test.py
 
 ### Despliegue
-![Heroku](https://heroku-badge.herokuapp.com/?app=obrasmta)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://obrasmta.herokuapp.com)
 
-He utilizado Heroku, actualmente hay una app de prueba en el siguiente enlace: [Despliegue Heroku](https://obrasmta.herokuapp.com/status)
+He utilizado Heroku, actualmente hay una app de prueba en el siguiente enlace: [Despliegue Heroku](https://obrasmta.herokuapp.com/)
 
 ### Documentación
 La documentación la encontramos: [documentación](./doc/README.md)

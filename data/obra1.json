@@ -1,0 +1,12 @@
+{
+    "obra1":{
+        "id": 1,
+        "nombre": "Centro Comercial Nevada",
+        "precio": 8966524,
+        "descripcion": "Obra realizada en Granada",
+        "activa": true,
+        "tipo_pago": "PayPal",
+        "materiales": "Suelo laminado y cubierta deck",
+        "horas_mano_obra": 1200
+      }
+  }

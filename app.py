@@ -2,18 +2,20 @@ from flask import Flask, json
 from datetime import datetime
 app = Flask(__name__)
 
-@app.route('/')
-def homepage():
-    the_time = datetime.now().strftime("%A, %d %b %Y %l:%M")
-
-    return """
-    <h1>Hola!! Prueba para IV 2018</h1>
-    <p>Hoy es: {time}.</p>
-    """.format(time=the_time)
-
-@app.route("/status")
+@app.route("/")
 def status():
-    with open('status.json') as f:
+    with open('data/status.json') as f:
+        data = json.load(f)
+        response = app.response_class(
+        response=json.dumps(data),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+@app.route("/datosObras/<file>")
+def datosObras(file):
+    with open("data/"+str(file)+".json") as f:
         data = json.load(f)
         response = app.response_class(
         response=json.dumps(data),
