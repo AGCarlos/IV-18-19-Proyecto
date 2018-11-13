@@ -41,7 +41,7 @@ web: gunicorn app:app --log-file=-
 ### Despliegue automático
 
 Se ha vinculado la cuenta de github con heroku para los despliegues automáticos.
-![despliegue-automático](https://imgur.com/a/xTAfJEk)
+![despliegue](https://i.imgur.com/8mbUB1w.png)
 
 ### El proyecto
 Actualmente se pueden acceder a obras diferentes a partir de /datosObra, por ejemplo:
