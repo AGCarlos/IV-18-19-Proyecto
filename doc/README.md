@@ -190,4 +190,4 @@ heroku container:push web --app obrasmta-container
 ```
 heroku container:release web --app obrasmta-container
 ```
-Una vez finalizados estos pasos, podemos encontrar la aplicación en este enlace [Docker-Heroku-APP](https://obrasmta-container.herokuapp.com/)
+Una vez finalizados estos pasos, podemos encontrar la aplicación en el siguiente enlace: [Docker-Heroku-APP](https://obrasmta-container.herokuapp.com/)
