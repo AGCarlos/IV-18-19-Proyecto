@@ -2,6 +2,7 @@ from flask import Flask, json
 from datetime import datetime
 app = Flask(__name__)
 
+@app.route("/")
 @app.route("/status")
 def status():
     with open('data/status.json') as f:
