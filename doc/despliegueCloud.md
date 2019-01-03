@@ -3,8 +3,8 @@
 
 He seguido los siguientes enlaces:
 
- - [Tutorial 1](https://github.com/mitchellh/vagrant-google) 
- - [Tutorial 2](https://blog.eduonix.com/system-programming/learn-use-vagrant-cloud/)
+ - [Vagrant Google Compute Engine](https://github.com/mitchellh/vagrant-google) 
+ - [Tutorial](https://blog.eduonix.com/system-programming/learn-use-vagrant-cloud/)
 
 para el despliegue de la aplicación de prueba en Google Cloud.
 
