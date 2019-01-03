@@ -1,44 +1,59 @@
-# coding=utf-8
-# Funciones de testeo para la clase Obra y ObraManager
+# -*- coding: utf-8 -*-
+from obra import Obras, Obra
 
-from obra import Obra, ObraManager
+misObras = Obras()
 
-ikea = Obra()
-ikea.Nueva(1, "Ikea", 200500, "Obra realizada en Málaga", True, "Transferencia", "2000m2 de cubierta sandwich", 200)
-leroy = Obra()
-leroy.Nueva(2, "Leroy", 589663, "Obra realizada en Sevilla", False, "Tarjeta de crédito", "5 Fachada sandwich y 10 cubiertas deck", 600)
-nevada = Obra()
-nevada.Nueva(3, "Centro comercial Nevada", 8966524, "Obra realizada en Granada", True, "PayPal", "Suelo laminado y cubierta deck", 1200)
-plazaMayor = Obra()
-plazaMayor.Nueva(3, "Complejo Plaza Mayor", 99966524, "Obra realizada en Málaga", True, "Transferencia", "199925 m2 de azulejos laminados y 859658m2 cubiertas con lucesnarios", 1800)
+# Test para añadir una obra individual
+def test_add():
+    prueba = Obra("prueba", 1234, "obra de prueba", False, "Transferencia", "Nada", 120)
+    resultado = misObras.add(prueba)
+    assert resultado == True
+    misObras.delete_all()
 
-gestionObras = ObraManager()
-gestionObras.add_obra(ikea)
-gestionObras.add_obra(leroy)
-gestionObras.add_obra(nevada)
-gestionObras.add_obra(plazaMayor)
+# Test para buscar una obra determinada
+def test_buscar_obra():
+    misObras.inicializar()
+    for o in misObras.buscar_obra("Ikea"):
+        assert o['nombre'] == "Ikea"
+    
+    assert misObras.buscar_obra("No Existe") == None
+    misObras.delete_all()
 
-# Test de precio con iva para una obra individual
-def test_iva():
-    assert ikea.precio_con_iva(0.21) == 242605.0
+# Test para eliminar todos los datos
+def test_delete_all():
+    misObras.inicializar()
+    assert misObras.delete_all() == None
 
-# Test para el nombre de una obra individual
-def test_print_nombre():
-    assert ikea.nombre == "Ikea"
-
-# Test para el numero de obras gestionadas
-def test_num_obras():
-    assert gestionObras.num_obras() == 4
+# Test para el contador de obras en la BD
+def test_size():
+    misObras.inicializar()
+    assert misObras.size_obras() == 4
+    misObras.delete_all()
 
 # Test para el gasto total de obras sin IVA
 def test_gasto_total_obras_sinIVA():
-    assert gestionObras.gasto_total_obras_sinIVA() == 109723211
+    misObras.inicializar()
+    assert misObras.gasto_total_obras_sinIVA() == 109723211
+    misObras.delete_all()
+
 
 # Test para el gasto total de obras con IVA
 def test_gasto_total_obras_conIVA():
-    assert gestionObras.gasto_total_obras_conIVA() == 132765085.30999999
+    misObras.inicializar()
+    assert misObras.gasto_total_obras_conIVA() == 132765085.30999999
+    misObras.delete_all()
+
 
 # Test para el numero de horas de mano de obra totales
 # de todas las obras gestionadas
 def test_horas_manoObra_totales():
-    assert gestionObras.horas_manoObra_totales() == 3800
+    misObras.inicializar()
+    assert misObras.horas_manoObra_totales() == 3800
+    misObras.delete_all()
+
+# Test para inicializar datos de prueba
+def test_inicializar():
+    assert misObras.inicializar() == True
+    assert misObras.inicializar() == False
+    misObras.delete_all()
+    
