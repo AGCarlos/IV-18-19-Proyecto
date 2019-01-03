@@ -178,4 +178,4 @@ El modo de llamar a las distintas funciones desde la línea de comandos es:
 - Parar gunicorn: fly stop:production
 - Actualizar la máquina: fly upgrade:production
 
-Por último ya podemos acceder a la app a través de: [DIRECCION_IP]() y en mi documentación hay un [modo de uso](https://github.com/maikeltoledo/IV-18-19-Proyecto/tree/master/doc/usoApp.md) para utilizarla.
+Por último ya podemos acceder a la app a través de: [35.239.72.203](http://35.239.72.203/) y en mi documentación hay un [modo de uso](https://github.com/maikeltoledo/IV-18-19-Proyecto/tree/master/doc/usoApp.md) para utilizarla.
