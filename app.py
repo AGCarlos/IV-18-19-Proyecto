@@ -58,7 +58,7 @@ def buscarObra(nombre):
                 'horas_mano_obra' : ob['horas_mano_obra']
             })
     else:
-        output = "No se ha encontrado la obra con nomnbre: " + nombre
+        output = "No se ha encontrado la obra con nombre: " + nombre
 
     response = app.response_class(
         response=json.dumps(output),
