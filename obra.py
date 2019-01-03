@@ -2,48 +2,30 @@
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-#
-# Clase Obra
-# Se define una obra con su id, nombre, precio, descripción, si está activa, tipo de pago,
-# materiales usados y horas de mano de obra.
-# Autor: Francisco Miguel Toledo Aguilera
-# 
 
 def conexion():
     mongoClient = MongoClient('localhost',27017)
     db = mongoClient['test']
     return db.obrasmta
 
-class Obra:
-    def __init__(self, nombre, precio, descripcion, activa, tipo_pago, materiales, horas_mano_obra):
-        self.nombre = nombre
-        self.precio = precio
-        self.descripcion = descripcion
-        self.activa = activa
-        self.tipo_pago = tipo_pago
-        self.materiales = materiales
-        self.horas_mano_obra = horas_mano_obra
-
-    def getName(self):
-        return self.nombre
-
 #
 # Clase Obras
 # Sistema CRUD de Obras
 # Autor: Francisco Miguel Toledo Aguilera
 # 
-class Obras:
-    def add(self, obra):
+class Obras():
+
+    def add(self, nombre, precio, descripcion, activa, tipo_pago, materiales, horas_mano_obra):
         obras = conexion()
         suID = "None"
         suID = obras.insert_one({
-            "nombre": obra.nombre,
-            "precio": obra.precio,
-            "descripcion": obra.descripcion,
-            "activa": obra.activa,
-            "tipo_pago": obra.tipo_pago,
-            "materiales": obra.materiales,
-            "horas_mano_obra": obra.horas_mano_obra,
+            "nombre": nombre,
+            "precio": precio,
+            "descripcion": descripcion,
+            "activa": activa,
+            "tipo_pago": tipo_pago,
+            "materiales": materiales,
+            "horas_mano_obra": horas_mano_obra,
         }).inserted_id
 
         if(suID != "None"):
@@ -58,35 +40,36 @@ class Obras:
 
     def buscar_obra(self, name):
         bd = conexion()
-        buscar = {"nombre": { "$regex": name } }
-        respuesta = bd.find(buscar)
-        if(respuesta.count() > 0):
+        respuesta = None
+        respuesta = bd.find({"nombre": { "$regex": name } })
+        result = list(respuesta)
+        if(len(result) > 0):
             return respuesta
         else:
             return None
 
-    def update(self, id, obra):
+    def update(self, id, nombre, precio, descripcion, activa, tipo_pago, materiales, horas_mano_obra):
         bd = conexion()
-        resultado = bd.productos.update_one(
+        resultado = bd.update_one(
             {
             '_id': ObjectId(id)
             }, 
             {
                 '$set': {
-                    "nombre": obra.nombre,
-                    "precio": obra.precio,
-                    "descripcion": obra.descripcion,
-                    "activa": obra.activa,
-                    "tipo_pago": obra.tipo_pago,
-                    "materiales": obra.materiales,
-                    "horas_mano_obra": obra.horas_mano_obra,
+                    "nombre": nombre,
+                    "precio": precio,
+                    "descripcion": descripcion,
+                    "activa": activa,
+                    "tipo_pago": tipo_pago,
+                    "materiales": materiales,
+                    "horas_mano_obra": horas_mano_obra,
                 }
             })
         return resultado.modified_count
 
     def delete(self, id):
         bd = conexion()
-        resultado = bd.productos.delete_one(
+        resultado = bd.delete_one(
             {
             '_id': ObjectId(id)
             })
@@ -99,7 +82,7 @@ class Obras:
 
     def size_obras(self):
         bd = conexion()
-        return bd.count()
+        return bd.count_documents({})
 
     def precio_con_iva(self, precio, t):
         iva = (precio*t) + precio
@@ -134,17 +117,13 @@ class Obras:
 
     def inicializar(self):
         bd = conexion()
-        if(bd.find().count() == 0):
+        if(bd.count_documents({}) == 0):
             misObras = Obras()
-            ikea = Obra("Ikea", 200500, "Obra realizada en Málaga", True, "Transferencia", "2000m2 de cubierta sandwich", 200)
-            leroy = Obra("Leroy", 589663, "Obra realizada en Sevilla", False, "Tarjeta de crédito", "5 Fachada sandwich y 10 cubiertas deck", 600)
-            nevada = Obra("Centro comercial Nevada", 8966524, "Obra realizada en Granada", True, "PayPal", "Suelo laminado y cubierta deck", 1200)
-            plazaMayor = Obra("Complejo Plaza Mayor", 99966524, "Obra realizada en Málaga", True, "Transferencia", "199925 m2 de azulejos laminados y 859658m2 cubiertas con lucesnarios", 1800)
+            misObras.add("Ikea", 200500, "Obra realizada en Málaga", True, "Transferencia", "2000m2 de cubierta sandwich", 200)
+            misObras.add("Leroy", 589663, "Obra realizada en Sevilla", False, "Tarjeta de crédito", "5 Fachada sandwich y 10 cubiertas deck", 600)
+            misObras.add("Centro comercial Nevada", 8966524, "Obra realizada en Granada", True, "PayPal", "Suelo laminado y cubierta deck", 1200)
+            misObras.add("Complejo Plaza Mayor", 99966524, "Obra realizada en Málaga", True, "Transferencia", "199925 m2 de azulejos laminados y 859658m2 cubiertas con lucesnarios", 1800)
 
-            misObras.add(ikea)
-            misObras.add(leroy)
-            misObras.add(nevada)
-            misObras.add(plazaMayor)
             return True
         else:
             return False

@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-from obra import Obras, Obra
+from obra import Obras
 
 misObras = Obras()
 
 # Test para añadir una obra individual
 def test_add():
-    prueba = Obra("prueba", 1234, "obra de prueba", False, "Transferencia", "Nada", 120)
-    resultado = misObras.add(prueba)
+    resultado = misObras.add("prueba", 1234, "obra de prueba", False, "Transferencia", "Nada", 120)
     assert resultado == True
     misObras.delete_all()
 

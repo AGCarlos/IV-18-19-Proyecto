@@ -11,7 +11,7 @@ Les muestro cada una de sus funciones con un ejemplo en mi máquina local.
 
 ![ListarObras](https://i.imgur.com/NECPUIB.png)
 
-#### Listar todas las obras (/buscarObra)
+#### Listar todas las obras (/buscarObra/<nombre>)
 
 ![BuscarObra](https://i.imgur.com/ly3W5ma.png)
 
