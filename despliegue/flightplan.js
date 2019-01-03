@@ -6,7 +6,7 @@ var plan = require('flightplan');
 
 plan.target('production', [
   {
-    host: '35.232.196.131',
+    host: '35.239.72.203',
     username: 'migueltoledo',
     agent: process.env.SSH_AUTH_SOCK
   }
