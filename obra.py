@@ -4,12 +4,8 @@ from bson.objectid import ObjectId
 
 
 def conexion():
-    #mongoClient = MongoClient('localhost',27017)
-    #db = mongoClient['test']
-    mongoClient = MongoClient('ds263619.mlab.com', 63619)
-    db = mongoClient['heroku_1ltf72lm']
-    db.authenticate('maikel', 'passHerokuMaster2019')
-    
+    mongoClient = MongoClient('localhost',27017)
+    db = mongoClient['test']
     return db.obrasmta
 
 #
