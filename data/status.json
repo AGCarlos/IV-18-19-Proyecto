@@ -2,6 +2,6 @@
     "status": "OK",
     "datos": {
         "ruta": "/crearObra",
-        "valor": "{ 'activa': false, 'descripcion': 'obra de prueba para probar status', 'horas_mano_obra': 856, 'materiales': 'material1 material2 material3 material4', 'nombre': 'obra de prueba', 'precio': 857458, 'tipo_pago': 'Transferencia X' }"
+        "valor": "{ 'activa': false, 'descripcion': 'obra de prueba para probar status IV1819', 'horas_mano_obra': 856, 'materiales': 'material1 material2 material3 material4', 'nombre': 'obra de prueba', 'precio': 857458, 'tipo_pago': 'Transferencia X' }"
     }
 }
