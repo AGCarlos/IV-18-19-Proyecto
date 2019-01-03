@@ -1,6 +1,6 @@
 from flask import Flask, json, jsonify, request
 from datetime import datetime
-from obra import Obras, Obra
+from obra import Obras
 
 app = Flask(__name__)
 

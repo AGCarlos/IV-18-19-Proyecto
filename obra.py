@@ -40,11 +40,10 @@ class Obras():
 
     def buscar_obra(self, name):
         bd = conexion()
-        respuesta = None
         respuesta = bd.find({"nombre": { "$regex": name } })
         result = list(respuesta)
         if(len(result) > 0):
-            return respuesta
+            return result
         else:
             return None
 
@@ -127,3 +126,8 @@ class Obras():
             return True
         else:
             return False
+
+
+mis = Obras()
+
+print(str(mis.buscar_obra("i")))
