@@ -1,0 +1,16 @@
+- hosts: all
+  remote_user: vagrant
+  become: yes
+
+  tasks:
+  - name: Actualizar la máquina
+    command: sudo apt-get update
+
+  - name: Instalar Git, pip3 y mongodb
+    command: sudo apt-get -y install git python3-pip mongodb
+
+  - name: Clonar el repositorio de GitHub
+    git: repo=https://github.com/maikeltoledo/IV-18-19-Proyecto.git  dest=app/
+
+  - name: Instalar los requisitos de la app
+    command: pip3 install -r app/requirements.txt
