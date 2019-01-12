@@ -57,7 +57,7 @@ He utilizado Heroku, actualmente hay una app de prueba en el siguiente enlace: [
 
 ### Despliegue en Google Cloud
 
-- Despliegue final: 35.239.72.203
+- Despliegue final: 35.246.89.231
 
 ### Documentación desglosada
 
